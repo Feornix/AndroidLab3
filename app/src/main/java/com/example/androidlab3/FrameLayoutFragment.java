@@ -27,6 +27,14 @@ public class FrameLayoutFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    int[] pictures = {
+            R.drawable.picture_1,
+            R.drawable.picture_2,
+            R.drawable.picture_3
+    };
+
+    int counter = 0;
+
     public FrameLayoutFragment() {
         // Required empty public constructor
     }
@@ -65,6 +73,16 @@ public class FrameLayoutFragment extends Fragment {
         binding = FragmentFrameLayoutBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
         // Inflate the layout for this fragment
+        binding.imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                counter++;
+                if(counter>2){
+                    counter = 0;
+                }
+                binding.imageView.setImageResource(pictures[counter]);
+            }
+        });
         return view;
     }
 }

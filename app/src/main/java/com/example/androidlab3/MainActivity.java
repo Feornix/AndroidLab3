@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        ConstraintLayoutFragment fragment = new ConstraintLayoutFragment();
+        FrameLayoutFragment fragment = new FrameLayoutFragment();
         fragmentTransaction.replace(R.id.placeholder, fragment);
         fragmentTransaction.commit();
         setContentView(view);

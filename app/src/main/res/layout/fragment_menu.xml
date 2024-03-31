@@ -11,28 +11,28 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/buttonM1"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:text="Button"
             android:textSize="60dp"/>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonM2"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:text="Button"
             android:textSize="60dp"/>
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/buttonM3"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:text="Button"
             android:textSize="60dp"/>
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/buttonM4"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:text="Button"

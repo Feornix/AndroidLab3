@@ -67,4 +67,5 @@ public class ConstraintLayoutFragment extends Fragment {
         // Inflate the layout for this fragment
         return view;
     }
+
 }

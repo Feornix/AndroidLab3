@@ -10,7 +10,7 @@ import android.view.View;
 
 import com.example.androidlab3.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CallBackInterface{
     ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,38 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.placeholder, fragment);
         fragmentTransaction.commit();
         setContentView(view);
+    }
+    @Override
+    public void Button1Switch(){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        LinearLayoutFragment fragment = new LinearLayoutFragment();
+        fragmentTransaction.replace(R.id.placeholder, fragment);
+        fragmentTransaction.commit();
+    }
+    @Override
+    public void Button2Switch(){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        ConstraintLayoutFragment fragment = new ConstraintLayoutFragment();
+        fragmentTransaction.replace(R.id.placeholder, fragment);
+        fragmentTransaction.commit();
+    }
+    @Override
+    public void Button3Switch(){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        FrameLayoutFragment fragment = new FrameLayoutFragment();
+        fragmentTransaction.replace(R.id.placeholder, fragment);
+        fragmentTransaction.commit();
+    }
+    @Override
+    public void Button4Switch(){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        GridLayoutFragment fragment = new GridLayoutFragment();
+        fragmentTransaction.replace(R.id.placeholder, fragment);
+        fragmentTransaction.commit();
     }
 
 }

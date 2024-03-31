@@ -1,5 +1,6 @@
 package com.example.androidlab3;
 
+import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
@@ -51,6 +52,12 @@ public class Menu extends Fragment {
     }
 
     FragmentMenuBinding binding;
+    CallBackInterface callBackInterface;
+    @Override
+    public void onAttach(Context context){
+        super.onAttach(context);
+        callBackInterface = (CallBackInterface) context;
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +72,35 @@ public class Menu extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentMenuBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+        binding.buttonM1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callBackInterface.Button1Switch();
+            }
+        });
+
+        binding.buttonM2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callBackInterface.Button2Switch();
+            }
+        });
+
+        binding.buttonM3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callBackInterface.Button3Switch();
+            }
+        });
+
+        binding.buttonM4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callBackInterface.Button4Switch();
+            }
+        });
+
+
         // Inflate the layout for this fragment
         return view;
     }

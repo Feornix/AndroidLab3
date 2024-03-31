@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.androidlab3.databinding.FragmentFrameLayoutBinding;
 import com.example.androidlab3.databinding.FragmentGridLayoutBinding;
@@ -64,6 +66,20 @@ public class GridLayoutFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentGridLayoutBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+        binding.button14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LinearLayout linearLayout = (LinearLayout) binding.linearLayout1;
+                LinearLayout.LayoutParams viewParams=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                viewParams.weight = 1;
+                TextView txtView = new TextView(getActivity().getApplicationContext());
+                txtView.setText(binding.editTextText8.getText());
+                txtView.setHeight(300);
+                txtView.setTextSize(32);
+                txtView.setTextColor(getResources().getColor(R.color.black));
+                linearLayout.addView(txtView);
+            }
+        });
         // Inflate the layout for this fragment
         return view;
     }
